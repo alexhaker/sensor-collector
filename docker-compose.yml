@@ -1,0 +1,14 @@
+www:
+  image: jakubsacha/symfony-docker:php7-dev
+  volumes:
+    - ".:/var/www/html/web"
+  ports:
+    - "80:80"
+  links:
+    - mongodb
+mongodb:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes:
+    - "./mongodb:/var/lib/mongodb"  
